@@ -11,10 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.fitnessexcerise.GlobalClasses.GlobalData;
 import com.example.fitnessexcerise.Models.Exercise;
 import com.example.fitnessexcerise.R;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -40,29 +39,28 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.View
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
-        Exercise exercise = list.get(position);
+        final Exercise exercise = list.get(position);
 
         holder.exercise_name.setText(exercise.getName());
-        Glide.with(context).load(R.drawable.excersise_image).into(holder.exercise_image);
+        Glide.with(context).load(exercise.getImg()).into(holder.exercise_image);
 
         holder.btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Added to list", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Added to list", Toast.LENGTH_SHORT).show();
                 holder.btn_add.setVisibility(View.GONE);
                 holder.btn_delete.setVisibility(View.VISIBLE);
-
+                GlobalData.list.add(exercise);
             }
         });
-
 
         holder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Removed from list", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(context, "Removed from list", Toast.LENGTH_SHORT).show();
                 holder.btn_add.setVisibility(View.VISIBLE);
                 holder.btn_delete.setVisibility(View.GONE);
-
+                GlobalData.list.remove(exercise);
             }
         });
 

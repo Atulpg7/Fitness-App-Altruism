@@ -2,9 +2,20 @@ package com.example.fitnessexcerise.Models;
 
 import android.graphics.drawable.Drawable;
 
-public class Exercise {
+import java.io.Serializable;
+
+public class Exercise implements Serializable{
 
     String name;
+    int img;
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
+    }
 
     public String getName() {
         return name;
