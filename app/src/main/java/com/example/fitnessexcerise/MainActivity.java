@@ -23,7 +23,9 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    
+
+
+    //Recycler View of Exercises
     RecyclerView exercise_rv;
     List<Exercise> exercisesList;
     ExercisesAdapter adapter;
@@ -33,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     //Buttons
-    ImageView btn_dec,btn_inc;
     TextView btn_continue;
 
     @Override
@@ -44,54 +45,30 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Home");
 
         getReferences();
+
         setExercises();
 
         setRecyclerViewData();
 
         setBtnClicks();
 
-        
-        
+
     }
 
     //All Btn clicks
     private void setBtnClicks() {
 
-        btn_inc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                int current = Integer.parseInt(et_users.getText().toString());
-                et_users.setText(""+(current+1));
-
-            }
-        });
-
-        btn_dec.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                int current = Integer.parseInt(et_users.getText().toString());
-
-                if(current==1){
-                    Toast.makeText(MainActivity.this, "Minimum 1 Required!!!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                et_users.setText(""+(current-1));
-            }
-        });
-
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                int numberOfUsers = Integer.parseInt(et_users.getText().toString());
-                ArrayList<Exercise> list = GlobalData.list;
+                if (GlobalData.list.size() < 1) {
+                    Toast.makeText(MainActivity.this, "Add Some Exercises first !!!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
-                intent.putExtra("list",list);
-                intent.putExtra("no_users",numberOfUsers);
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra("list",GlobalData.list);
                 startActivity(intent);
 
             }
@@ -105,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     private void setRecyclerViewData() {
 
         exercise_rv.setHasFixedSize(true);
-        exercise_rv.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        exercise_rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         exercise_rv.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -116,21 +93,26 @@ public class MainActivity extends AppCompatActivity {
     private void setExercises() {
 
         int[] drawablesArray = {
-                R.drawable.img_1,R.drawable.img_2,R.drawable.img_3,
-                R.drawable.img_4,R.drawable.img_5,R.drawable.img_6,};
+                R.drawable.img_1, R.drawable.img_2, R.drawable.img_3,
+                R.drawable.img_4, R.drawable.img_5, R.drawable.img_6,};
 
         ArrayList<String> exerciseNames = new ArrayList<>();
-        exerciseNames.add("A Skip"); exerciseNames.add("B Skip");
-        exerciseNames.add("High Knees"); exerciseNames.add("Icky Shuffle");
-        exerciseNames.add("Two Feet In"); exerciseNames.add("4 Cone Drill");
-        exerciseNames.add("40 Yard Dash"); exerciseNames.add("Shuttle Run");
-        exerciseNames.add("One on One"); exerciseNames.add("Half Gassers");
+        exerciseNames.add("A Skip");
+        exerciseNames.add("B Skip");
+        exerciseNames.add("High Knees");
+        exerciseNames.add("Icky Shuffle");
+        exerciseNames.add("Two Feet In");
+        exerciseNames.add("4 Cone Drill");
+        exerciseNames.add("40 Yard Dash");
+        exerciseNames.add("Shuttle Run");
+        exerciseNames.add("One on One");
+        exerciseNames.add("Half Gassers");
 
-        int i=0;
-        for(String s : exerciseNames){
+        int i = 0;
+        for (String s : exerciseNames) {
             Exercise exercise = new Exercise();
-            if(i==6){
-                i=0;
+            if (i == 6) {
+                i = 0;
             }
             exercise.setImg(drawablesArray[i++]);
             exercise.setName(s);
@@ -143,10 +125,8 @@ public class MainActivity extends AppCompatActivity {
     private void getReferences() {
         exercise_rv = findViewById(R.id.exercise_rv);
         exercisesList = new ArrayList<>();
-        btn_dec = findViewById(R.id.btn_dec);
-        btn_inc = findViewById(R.id.btn_inc);
         btn_continue = findViewById(R.id.btn_continue);
         et_users = findViewById(R.id.et_users);
-        adapter = new ExercisesAdapter(this,exercisesList);
+        adapter = new ExercisesAdapter(this, exercisesList);
     }
 }

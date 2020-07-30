@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +40,7 @@ public class SelectedExerciseAdapter extends RecyclerView.Adapter<SelectedExerci
 
         Exercise exercise = list.get(position);
         holder.exercise_name.setText(exercise.getName());
+        holder.et_users.setText(String.valueOf(exercise.getNoOfusers()));
         Glide.with(context).load(exercise.getImg()).into(holder.exercise_image);
     }
 
@@ -48,8 +50,10 @@ public class SelectedExerciseAdapter extends RecyclerView.Adapter<SelectedExerci
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         CircleImageView exercise_image;
         TextView exercise_name;
+        EditText et_users;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -57,6 +61,7 @@ public class SelectedExerciseAdapter extends RecyclerView.Adapter<SelectedExerci
 
             exercise_image = itemView.findViewById(R.id.excercise_image);
             exercise_name = itemView.findViewById(R.id.excercise_name);
+            et_users= itemView.findViewById(R.id.et_users);
         }
     }
 }

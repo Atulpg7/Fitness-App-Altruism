@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
 
@@ -42,53 +43,53 @@
                 android:scrollbars="none" />
 
 
-            <!--            Number of users-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+            <!--            &lt;!&ndash;          Number of users&ndash;&gt;-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="15dp"-->
+            <!--                android:gravity="center"-->
+            <!--                android:orientation="horizontal">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:fontFamily="sans-serif"
-                    android:text="No of Users: "
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:background="@color/white"-->
+            <!--                    android:fontFamily="sans-serif"-->
+            <!--                    android:text="No of Users: "-->
+            <!--                    android:textAlignment="center"-->
+            <!--                    android:textColor="@color/black"-->
+            <!--                    android:textSize="22sp"-->
+            <!--                    android:textStyle="bold" />-->
 
-                <ImageView
-                    android:id="@+id/btn_dec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/decrease_icon" />
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/btn_dec"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginLeft="10dp"-->
+            <!--                    android:src="@drawable/decrease_icon" />-->
 
-                <EditText
-                    android:id="@+id/et_users"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@android:color/transparent"
-                    android:gravity="center"
-                    android:inputType="number"
-                    android:text="1"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+            <!--                <EditText-->
+            <!--                    android:id="@+id/et_users"-->
+            <!--                    android:layout_width="40dp"-->
+            <!--                    android:layout_height="40dp"-->
+            <!--                    android:layout_marginLeft="5dp"-->
+            <!--                    android:layout_marginRight="5dp"-->
+            <!--                    android:background="@android:color/transparent"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:inputType="number"-->
+            <!--                    android:text="1"-->
+            <!--                    android:textSize="20sp"-->
+            <!--                    android:textStyle="bold" />-->
 
-                <ImageView
-                    android:id="@+id/btn_inc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/increase_icon" />
+            <!--                <ImageView-->
+            <!--                    android:id="@+id/btn_inc"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:src="@drawable/increase_icon" />-->
 
 
-            </LinearLayout>
+            <!--            </LinearLayout>-->
 
 
             <TextView

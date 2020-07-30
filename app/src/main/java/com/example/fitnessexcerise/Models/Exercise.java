@@ -8,6 +8,15 @@ public class Exercise implements Serializable{
 
     String name;
     int img;
+    int noOfusers;
+
+    public int getNoOfusers() {
+        return noOfusers;
+    }
+
+    public void setNoOfusers(int noOfusers) {
+        this.noOfusers = noOfusers;
+    }
 
     public int getImg() {
         return img;

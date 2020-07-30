@@ -41,54 +41,54 @@
                 android:scrollbars="none" />
 
 
-            <!--            Number of users-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+<!--            &lt;!&ndash;            Number of users&ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="horizontal">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:fontFamily="sans-serif"
-                    android:text="No of Users: "
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/btn_dec"-->
+<!--                <TextView-->
 <!--                    android:layout_width="wrap_content"-->
 <!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginLeft="10dp"-->
-<!--                    android:src="@drawable/decrease_icon" />-->
+<!--                    android:background="@color/white"-->
+<!--                    android:fontFamily="sans-serif"-->
+<!--                    android:text="No of Users: "-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="22sp"-->
+<!--                    android:textStyle="bold" />-->
 
-                <EditText
-                    android:id="@+id/et_selected_users"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@android:color/transparent"
-                    android:focusable="false"
-                    android:gravity="center"
-                    android:inputType="number"
-                    android:text="1"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+<!--&lt;!&ndash;                <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/btn_dec"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_marginLeft="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:src="@drawable/decrease_icon" />&ndash;&gt;-->
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/btn_inc"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:src="@drawable/increase_icon" />-->
+<!--                <EditText-->
+<!--                    android:id="@+id/et_selected_users"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:layout_marginRight="5dp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:focusable="false"-->
+<!--                    android:gravity="center"-->
+<!--                    android:inputType="number"-->
+<!--                    android:text="1"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--&lt;!&ndash;                <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:id="@+id/btn_inc"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:src="@drawable/increase_icon" />&ndash;&gt;-->
 
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
 
             <TextView

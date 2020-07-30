@@ -21,7 +21,6 @@ public class SecondActivity extends AppCompatActivity {
 
     
     TextView btn_submit;
-    EditText et_selected_users;
     
     //Recycler View Data
     RecyclerView selected_exercises_rv;
@@ -45,9 +44,7 @@ public class SecondActivity extends AppCompatActivity {
         getReferences();
         
         setRecyclerView();
-        
-        setSelectedUsers();
-        
+
         setBtnClicks();
         
     }
@@ -64,11 +61,6 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
-    //Setting no of users
-    private void setSelectedUsers() {
-        et_selected_users.setText(""+numberOfUsers);
-    }
-
 
     //Setting Selected Excersises
     private void setRecyclerView() {
@@ -83,7 +75,6 @@ public class SecondActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         list = (ArrayList<Exercise>) intent.getSerializableExtra("list");
-        numberOfUsers = (int) intent.getExtras().get("no_users");
         //Toast.makeText(this, "List: "+list+" Users: "+numberOfUsers, Toast.LENGTH_SHORT).show();
     }
 
@@ -93,7 +84,6 @@ public class SecondActivity extends AppCompatActivity {
 
         selected_exercises_rv = findViewById(R.id.selected_exercises_rv);
         btn_submit = findViewById(R.id.btn_submit);
-        et_selected_users= findViewById(R.id.et_selected_users);
         adapter=new SelectedExerciseAdapter(this,list);
     }
 }
